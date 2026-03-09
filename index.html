@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iconique Shop</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Your compiled CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto fw-bold" href="#">iconique</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#carouselExampleDark"
+                >Home</a
+              >
+            </li>
+
+            <!-- Shop Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#brands"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Shop
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#products">Best Seller</a>
+                </li>
+                <li><a class="dropdown-item" href="#skincare">Skin Care</a></li>
+
+                <li><a class="dropdown-item" href="#">premium product</a></li>
+                <li><hr class="dropdown-divider" /></li>
+
+                <!-- Nested Brands Dropdown -->
+                <li class="dropdown-submenu dropend">
+                  <a
+                    class="dropdown-item dropdown-toggle"
+                    href="#"
+                    data-bs-toggle="dropdown"
+                    >Brands</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+
+          <form class="d-flex ms-3" role="search" onsubmit="return false;">
+            <input
+              id="searchInput"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search products..."
+            />
+            <button class="btn btn-outline-success">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+          <img src="gallery/c.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Beauty, Naturally Yours</h1>
+            <p>Discover organic skincare & timeless beauty collections.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="gallery/b.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Glow Everyday</h1>
+            <p>Find makeup essentials that bring out your best look.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="gallery/a.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Strong & Shiny</h1>
+            <p>Nourishing haircare for confidence in every strand.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Delivery Process -->
+    <div class="container-fluid py-5 bg-light text-center custom-delivery">
+      <div class="row">
+        <div class="col-md-4 feature-box">
+          <i class="bi bi-truck display-4 mb-3"></i>
+          <h3>Delivery</h3>
+          <p>Free delivery on orders over $50</p>
+        </div>
+        <div class="col-md-4 feature-box">
+          <i class="bi bi-arrow-counterclockwise display-4 mb-3"></i>
+          <h3>Return</h3>
+          <p>Free returns within 30 days</p>
+        </div>
+        <div class="col-md-4 feature-box">
+          <i class="bi bi-shield-lock display-4 mb-3"></i>
+          <h3>Secure</h3>
+          <p>100% secure payments with SSL encryption</p>
+        </div>
+      </div>
+    </div>
+    <!-- Best Sellers -->
+    <div class="container-fluid py-5" id="products">
+      <h2 class="text-center mb-5">Best Sellers</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img
+              src="gallery/p.jpg"
+              class="card-img-top product-img"
+              alt="Glowing Skin Starts Here"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Glowing Skin Starts Here</h5>
+              <p class="card-text">
+                A substance applied to the external parts of the human body.
+              </p>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#product1Modal"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img
+              src="gallery/p1.jpg"
+              class="card-img-top product-img"
+              alt="Hydrating Face Serum"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hydrating Face Serum</h5>
+              <p class="card-text">
+                Boosts hydration and restores natural glow.
+              </p>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#product2Modal"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img
+              src="gallery/p2.jpg"
+              class="card-img-top product-img"
+              alt="Argan Oil Hair Mask"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Argan Oil Hair Mask</h5>
+              <p class="card-text">Deep nourishment for soft & shiny hair.</p>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#product3Modal"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img
+              src="gallery/p3.jpg"
+              class="card-img-top product-img"
+              alt="Moisturizing Body Lotion"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Moisturizing Body Lotion</h5>
+              <p class="card-text">
+                Keeps skin hydrated and soft all day long.
+              </p>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#product4Modal"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img
+              src="gallery/p4.jpg"
+              class="card-img-top product-img"
+              alt="Rose Water Toner"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Rose Water Toner</h5>
+              <p class="card-text">
+                Calms and purifies skin with natural astringent.
+              </p>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#product5Modal"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center">
+            <img
+              src="gallery/p5.jpg"
+              class="card-img-top product-img"
+              alt="Rose Water Mist"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Rose Water Mist</h5>
+              <p class="card-text">
+                Hydrates and refreshes skin with natural moisture.
+              </p>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#product6Modal"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Product 1 Modal -->
+    <div class="modal fade" id="product1Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 400px">
+        <div class="modal-content text-center p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Glowing Skin Starts Here</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="gallery/m.jpg"
+              class="product-img mb-3"
+              alt="Glowing Skin Starts Here"
+            />
+            <p>
+              A substance applied to the external parts of the human body, like
+              skin, hair, and nails, to cleanse, beautify, protect, or alter
+              appearance. Includes skincare, makeup, and fragrances.
+            </p>
+            <p class="fw-bold text-success">$19.99</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-info">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 Modal -->
+    <div class="modal fade" id="product2Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 400px">
+        <div class="modal-content text-center p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Hydrating Face Serum</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="gallery/m1.jpg"
+              class="product-img mb-3"
+              alt="Hydrating Face Serum"
+            />
+            <p>
+              Lightweight serum that delivers lasting hydration. Formulated with
+              hyaluronic acid and natural extracts, reduces fine lines and
+              leaves your skin glowing and refreshed.
+            </p>
+            <p class="fw-bold text-success">$29.99</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-info">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 Modal -->
+    <div class="modal fade" id="product3Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 400px">
+        <div class="modal-content text-center p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Argan Oil Hair Mask</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="gallery/m2.jpg"
+              class="product-img mb-3"
+              alt="Argan Oil Hair Mask"
+            />
+            <p>
+              Deeply nourishing mask infused with pure argan oil. Restores
+              shine, reduces frizz, and strengthens damaged hair.
+            </p>
+            <p class="fw-bold text-success">$24.99</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-info">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 Modal -->
+    <div class="modal fade" id="product4Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 400px">
+        <div class="modal-content text-center p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Moisturizing Body Lotion</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="gallery/m3.jpg"
+              class="product-img mb-3"
+              alt="Moisturizing Body Lotion"
+            />
+            <p>
+              Keeps your skin hydrated and soft all day. Formulated with natural
+              ingredients for smooth, refreshed skin.
+            </p>
+            <p class="fw-bold text-success">$19.99</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-info">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 5 Modal -->
+    <div class="modal fade" id="product5Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 400px">
+        <div class="modal-content text-center p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Rose Water Toner</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="gallery/m4.jpg"
+              class="product-img mb-3"
+              alt="Rose Water Toner"
+            />
+            <p>
+              Calms and purifies skin with natural astringent properties.
+              Perfect for maintaining a fresh complexion.
+            </p>
+            <p class="fw-bold text-success">$17.99</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-info">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 6 Modal -->
+    <div class="modal fade" id="product6Modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 400px">
+        <div class="modal-content text-center p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Rose Water Mist</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="gallery/m5.jpg"
+              class="product-img mb-3"
+              alt="Rose Water Mist"
+            />
+            <p>
+              Hydrates and refreshes skin with natural moisture. Perfect for a
+              dewy, glowing look anytime.
+            </p>
+            <p class="fw-bold text-success">$18.99</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-info">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Premium Product -->
+    <section class="premium-products py-5">
+      <div class="container text-center">
+        <h2 class="section-title mb-4">Our Premium Products</h2>
+        <div class="row g-4 justify-content-center">
+          <!-- Product Card -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="product-card">
+              <img
+                src="gallery/m1.jpg"
+                alt="Hydrating Face Serum"
+                class="product-img"
+              />
+              <div class="overlay">
+                <h5>Hydrating Face Serum</h5>
+                <p>$25.00</p>
+                <button class="btn btn-custom">Shop Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="product-card">
+              <img src="gallery/m2.jpg" alt="Face Cream" class="product-img" />
+              <div class="overlay">
+                <h5>Sunscreens</h5>
+                <p>$25.00</p>
+                <button class="btn btn-custom">Shop Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="product-card">
+              <img src="gallery/m5.jpg" alt="Face Cream" class="product-img" />
+              <div class="overlay">
+                <h5>Facial Creams</h5>
+                <p>$30.00</p>
+                <button class="btn btn-custom">Shop Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="product-card">
+              <img src="gallery/m3.jpg" alt="Face Cream" class="product-img" />
+              <div class="overlay">
+                <h5>Moisturizing Body Lotion</h5>
+                <p>$19.99</p>
+                <button class="btn btn-custom">Shop Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container py-5" id="products skincare">
+      <h2 class="text-center mb-5">Best Sellers</h2>
+      <div class="row g-4">
+        <!-- Product 1 (Sold Out) -->
+        <div class="col-md-4">
+          <div class="card product-card sold-out">
+            <span class="sold-out-badge">Sold Out</span>
+            <img
+              src="gallery/p.jpg"
+              class="card-img-top product-img"
+              alt="Luxury Serum"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Luxury Serum</h5>
+              <p class="card-text">Hydrates and rejuvenates skin.</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="gallery/p1.jpg"
+              class="card-img-top product-img"
+              alt="Hydrating Face Serum"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Hydrating Face Serum</h5>
+              <p class="card-text">Boosts hydration and glow.</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 (Sold Out) -->
+        <div class="col-md-4">
+          <div class="card product-card sold-out">
+            <span class="sold-out-badge">Sold Out</span>
+            <img
+              src="gallery/p2.jpg"
+              class="card-img-top product-img"
+              alt="Argan Oil Hair Mask"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Argan Oil Hair Mask</h5>
+              <p class="card-text">Deep nourishment for shiny hair.</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="gallery/p3.jpg"
+              class="card-img-top product-img"
+              alt="Moisturizing Body Lotion"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Moisturizing Body Lotion</h5>
+              <p class="card-text">Keeps skin hydrated all day.</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 (Sold Out) -->
+        <div class="col-md-4">
+          <div class="card product-card sold-out">
+            <span class="sold-out-badge">Sold Out</span>
+            <img
+              src="gallery/p4.jpg"
+              class="card-img-top product-img"
+              alt="Rose Water Toner"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Rose Water Toner</h5>
+              <p class="card-text">Calms and purifies skin naturally.</p>
+              <button class="btn btn-primary add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="gallery/p5.jpg"
+              class="card-img-top product-img"
+              alt="Rose Water Mist"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Rose Water Mist</h5>
+              <p class="card-text">Hydrates and refreshes skin instantly.</p>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-container="body"
+                data-bs-toggle="popover"
+                data-bs-placement="top"
+                data-bs-content="Top popover"
+              >
+                Popover on top
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light pt-5" id="contact">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- About / Logo -->
+          <div class="col-md-4 text-center text-md-start">
+            <h3 class="footer-logo mb-3 logo">ICONIQUE</h3>
+            <p>
+              ICONIQUE offers premium cosmetics products, committed to
+              sustainability and giving back. We strive to provide the finest
+              ingredients and exceptional service to all our customers.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2 text-center text-md-start">
+            <h5 class="mb-3">Quick Links</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-md-3 text-center text-md-start">
+            <h5 class="mb-3">Contact Us</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill me-2"></i>123 Cosmetic Street,
+              Karachi, Pakistan
+            </p>
+            <p><i class="bi bi-telephone-fill me-2"></i>+92 300 1234567</p>
+            <p><i class="bi bi-envelope-fill me-2"></i>info@iconique.com</p>
+          </div>
+
+          <!-- Newsletter & Social -->
+          <div class="col-md-3 text-center text-md-start">
+            <h5 class="mb-3">Newsletter</h5>
+            <p>Subscribe for updates & exclusive offers</p>
+            <div class="d-flex mb-3">
+              <input
+                type="email"
+                class="form-control me-2 newsletter-input"
+                placeholder="Your email"
+              />
+              <button class="btn btn-golden">Subscribe</button>
+            </div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center pb-3">
+          <p>&copy; 2025 ICONIQUE. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const buttons = document.querySelectorAll(".product-card .btn");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", function (event) {
+          const card = btn.closest(".product-card");
+
+          if (card.classList.contains("sold-out")) {
+            event.preventDefault(); // Stop any default action
+            alert("You are our priority, but this product is sold out!");
+          } else {
+            console.log("Product added to cart");
+          }
+        });
+      });
+      const searchInput = document.getElementById("searchInput");
+      const products = document.querySelectorAll(".card");
+
+      searchInput.addEventListener("keyup", function () {
+        const searchValue = searchInput.value.toLowerCase();
+
+        products.forEach((product) => {
+          const title = product.querySelector(".card-title");
+
+          if (title) {
+            const text = title.textContent.toLowerCase();
+
+            if (text.includes(searchValue)) {
+              product.parentElement.style.display = "block";
+            } else {
+              product.parentElement.style.display = "none";
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

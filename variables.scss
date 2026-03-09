@@ -1,0 +1,27 @@
+
+$color-main: #778ab8;
+$color-accent: #EFEBCE;
+$color-golden: #9e916f;  // <-- this must exist
+$color-black: #010200;
+$color-text: #000000;
+$color-primary: #ffffff;
+$color-secondary: #500909;
+
+
+// Fonts
+$font-heading: 'Playfair Display', serif;
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+$font-logo: 'Logob', sans-serif;
+
+// Buttons
+$btn-radius: 5px;
+$btn-padding: 10px 20px;
+$btn-color: $color-main;
+$btn-hover-color: $color-golden;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 40px;

@@ -1,0 +1,553 @@
+@use 'variables' as *;
+
+// ------------------------------
+// Global Styles
+// ------------------------------
+
+@font-face {
+  font-family: 'logo', sans-serif;
+  src: url(gallery/Groute.otf) format('opentype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-text;
+  background-color: $color-primary;
+  line-height: 1.6;
+}
+
+// ------------------------------
+// Navbar
+// ------------------------------
+.navbar {
+  background-color: transparent;
+  font-family: $font-primary;
+  font-weight: 500;
+  padding: $spacing-sm $spacing-md;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &.scrolled {
+    background-color: $color-primary;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .navbar-brand {
+    font-family: $font-logo;
+    font-size: 1.8rem;
+    color: $color-main;
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    position: relative;
+    color: $color-black;
+    margin: 0 $spacing-sm;
+    transition: 0.3s;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: $color-golden;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    &:hover:after,
+    &.active:after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: $color-golden;
+    }
+  }
+
+  .dropdown-menu {
+    border-radius: $btn-radius;
+    padding: $spacing-sm 0;
+
+    .dropdown-item:hover {
+      background-color: $color-accent;
+      color: $color-main;
+    }
+
+    .dropdown-submenu {
+      position: relative;
+      .dropdown-menu {
+        top: 0;
+        left: 100%;
+      }
+    }
+  }
+
+  .form-control {
+    border-radius: $btn-radius;
+  }
+
+  .btn-outline-success {
+    border-radius: $btn-radius;
+    transition: 0.3s;
+    &:hover {
+      background-color: $color-main;
+      color: $color-primary;
+      border-color: $color-main;
+    }
+  }
+}
+
+// ------------------------------
+// Carousel
+// ------------------------------
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: linear-gradient(180deg, rgba(0,0,0,0.5), transparent);
+  padding: $spacing-md;
+  border-radius: $btn-radius;
+  animation: fadeUp 1s ease forwards;
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 3rem;
+    color: $color-primary;
+    text-shadow: 2px 2px rgba(0,0,0,0.5);
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $color-primary;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+  }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color:none;
+  border-radius: 50%;
+  padding: 10px;
+  opacity: 0.8;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+// ------------------------------
+// Feature / Delivery Section
+// ------------------------------
+.custom-delivery {
+  background-color: $color-accent;
+  text-align: center;
+
+  .feature-box {
+    padding: $spacing-md;
+
+    i {
+      color: $color-main;
+      font-size: 3rem;
+      margin-bottom: $spacing-sm;
+      transition: transform 0.3s;
+    }
+
+    &:hover i {
+      transform: scale(1.2);
+    }
+
+    h3 {
+      margin-bottom: $spacing-xs;
+      font-family: $font-heading;
+      color: $color-black;
+    }
+
+    p {
+      color: $color-black;
+    }
+  }
+}
+
+// ------------------------------
+// Product Cards / Best Sellers
+// ------------------------------
+.card, .product-card {
+  overflow: hidden;
+  border-radius: $btn-radius;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
+
+  .product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: $btn-radius;
+  }
+
+  .btn {
+    border-radius: $btn-radius;
+    background: $color-main;
+    color: $color-primary;
+    padding: $btn-padding;
+    margin-top: $spacing-sm;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+
+    &:hover {
+      background: $color-golden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+  }
+
+  .card-title, .overlay h5 {
+    font-family: $font-heading;
+    color: $color-main;
+  }
+
+  .card-text, .overlay p {
+    color: $color-black;
+  }
+}
+
+// ------------------------------
+// Modals
+// ------------------------------
+.modal-content {
+  border-radius: $btn-radius;
+  padding: $spacing-md;
+  text-align: center;
+
+  .modal-title {
+    font-family: $font-heading;
+    color: $color-main;
+  }
+
+  p {
+    color: $color-black;
+    margin-bottom: $spacing-sm;
+  }
+
+  .btn-info {
+    background-color: $btn-color;
+    color: $color-primary;
+    border-radius: $btn-radius;
+    padding: $btn-padding;
+    &:hover {
+      background-color: $btn-hover-color;
+    }
+  }
+
+  .modal-body img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: $btn-radius;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+// ------------------------------
+// Premium Products
+// ------------------------------
+.premium-products {
+  background-color: $color-accent;
+  padding: $spacing-lg 0;
+
+  .section-title {
+    font-family: $font-heading;
+    color: $color-main;
+    margin-bottom: $spacing-md;
+  }
+
+  .product-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: $btn-radius;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: $color-main;
+      padding: $spacing-sm;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.4s, transform 0.3s;
+
+      h5 {
+        font-family: $font-heading;
+        margin-bottom: $spacing-xs;
+      }
+
+      p {
+        color: $color-accent;
+        margin-bottom: $spacing-sm;
+      }
+
+      .btn-custom {
+        background-color: $btn-color;
+        border: none;
+        border-radius: $btn-radius;
+        padding: $btn-padding;
+        color: $color-primary;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $btn-hover-color;
+        }
+      }
+    }
+
+    &:hover .overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.product-card {
+  position: relative;
+  border-radius: $btn-radius;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
+
+  .product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .btn {
+    margin-top: $spacing-sm;
+  }
+}
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+    .overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .card-body {
+    text-align: center;
+
+    .card-title {
+      font-weight: 600;
+      color: $color-text;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: darken($color-text, 20%);
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: $color-secondary;
+      color: $color-primary;
+      border-radius: $btn-radius;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: $color-golden;
+        color: $color-primary;
+      }
+    }
+  }
+
+  .sold-out-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255,0,0,0.85);
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    z-index: 2;
+  }
+
+  &.sold-out {
+    opacity: 0.7;
+
+    .btn {
+      cursor: not-allowed;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s;
+
+    h5 {
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .btn-custom {
+      margin-top: 10px;
+      background-color: $color-golden;
+      border: none;
+      color: $color-primary;
+      border-radius: $btn-radius;
+
+      &:hover {
+        background-color: darken($color-golden, 10%);
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .product-card .product-img {
+    height: 250px;
+  }
+}
+
+.footer {
+  font-family: $font-primary;
+  background-color: $color-black;
+  color: $color-accent;
+
+  .footer-logo {
+    font-family: $font-logo;
+    font-size: 3rem;
+    color: $color-main
+  }
+
+  h5 {
+    color: $color-main;
+    font-family: $font-heading;
+    margin-bottom: 1rem;
+  }
+
+  p, li {
+    color: $color-accent;
+    font-size: 0.95rem;
+  }
+
+  .footer-links li a {
+    color: $color-accent;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-golden;
+      text-decoration: underline;
+    }
+  }
+
+  .newsletter-input {
+    border-radius: $btn-radius;
+    border: 1px solid $color-golden;
+    padding: 5px 10px;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      border-color: $color-main;
+      box-shadow: 0 0 5px rgba($color-main, 0.5);
+    }
+  }
+
+  .btn-golden {
+    background-color: $color-golden;
+    border: none;
+    border-radius: $btn-radius;
+    color: $color-primary;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: darken($color-golden, 10%);
+      color: $color-primary;
+    }
+  }
+
+  .social-icons a {
+    color: $color-accent;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-golden;
+    }
+  }
+
+  hr {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
